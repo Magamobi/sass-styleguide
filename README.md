@@ -41,7 +41,9 @@ Portanto o objetivo deste guia é proporcionar uma escrita coesa e concisa, esca
 
 ## Princípios
 
-Princípios básicos a serem adotados por quem utiliza a linguagem Sass são praticamente os mesmos dos adotados para escrita do CSS. O código deve, sem exceção, ser mantido o mais simples possível (utilizando o princípio [KISS](https://pt.wikipedia.org/wiki/Keep_It_Simple))
+Princípios básicos a serem adotados por quem utiliza a linguagem Sass são praticamente os mesmos dos adotados para escrita do CSS. O código deve, sem exceção, ser mantido o mais simples possível (utilizando o princípio [KISS](https://pt.wikipedia.org/wiki/Keep_It_Simple)). Esse princípio deve prevalecer sobre outro princípio comum e que também é adotado neste guia, o [DRY](https://pt.wikipedia.org/wiki/Don%27t_repeat_yourself) (Don't Repeat Yourself, não repita a si mesmo), que consiste em não repetir codigo quando o mesmo poderia ser reutilizado.
+
+Isso quer dizer que, por vezes, é preferível repetir trechos para manter a legibilidade e manutenabilidade do código.
 
 
 ## Referências
