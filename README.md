@@ -11,27 +11,27 @@ Todas as regras descritas neste foram concebidas e discutidas como melhores prá
 
 - [Introdução](#introdu%C3%A7%C3%A3o)
 - [Princípios](#princ%C3%ADpios)
-- [Stack e Instalação]()
-- [Terminologias]()
-- [Sintaxe e formatação]()
-  - [Strings]()
-  - [Números]()
-  - [Cores]()
-  - [Lists]()
-  - [Maps]()
-  - [Declaração]()
-  - [Ordenação]()
-  - [Aninhamento de seletores]()
-- [Nomeação]()
-- [Comentários]()
-- [Responsividade]()
-  - [Nomeação de breakpoints]()
-  - [Uso das media queries]()
-- [Variáveis]()
-- [Extends]()
-- [Mixins]()
-- [Condicionais]()
-- [Loops]()
+- [Stack e Instalação](#stack-e-instala%C3%A7%C3%A3o)
+- [Terminologias](#)
+- [Sintaxe e formatação](#)
+  - [Strings](#)
+  - [Números](#)
+  - [Cores](#)
+  - [Lists](#)
+  - [Maps](#)
+  - [Declaração](#)
+  - [Ordenação](#)
+  - [Aninhamento de seletores](#)
+- [Nomeação](#)
+- [Comentários](#)
+- [Responsividade](#)
+  - [Nomeação de breakpoints](#)
+  - [Uso das media queries](#)
+- [Variáveis](#)
+- [Extends](#)
+- [Mixins](#)
+- [Condicionais](#)
+- [Loops](#)
 
 ## Introdução
 
@@ -45,7 +45,7 @@ Princípios básicos a serem adotados por quem utiliza a linguagem Sass são pra
 
 Isso quer dizer que, por vezes, é preferível repetir trechos para manter a legibilidade e manutenabilidade do código.
 
-## Stack
+## Stack e Instalação
 
 É interessante que todos os membros da equipe tenham conhecimento a respeito das tecnologias e ferramentas utilizadas e saibam como instalá-las.
 
