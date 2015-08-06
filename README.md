@@ -9,9 +9,9 @@ Todas as regras descritas neste foram concebidas e discutidas como melhores prá
 
 ## Tópicos
 
-- [Introdução](#introdu%C3%A7%C3%A3o)
-- [Princípios](#princ%C3%ADpios)
-- [Stack e Instalação](#stack-e-instala%C3%A7%C3%A3o)
+- [Introdução](#introdução)
+- [Princípios](#princípios)
+- [Stack e Instalação](#stack-e-instalação)
 - [Terminologias](#)
 - [Sintaxe e formatação](#)
   - [Strings](#)
