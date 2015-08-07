@@ -16,7 +16,10 @@ Todas as regras descritas neste foram concebidas e discutidas como melhores prá
   - [Compass](#compass)
   - [Susy](#susy)
   - [Outros Componentes](#outros-componentes)
-- [Terminologias](#)
+- [Terminologias](#terminologias)
+  - [Propriedade](#propriedade)
+  - [Seletor](#seletor)
+  - [Regra](#regra)
 - [Sintaxe e formatação](#)
   - [Strings](#)
   - [Números](#)
@@ -92,6 +95,55 @@ Para instalá-lo você deve possuir o Ruby previamente instalado e executar o se
 - **Breakpoint:** É uma biblioteca que auxilia a escrita de media queries. Para instalar: `gem install breakpoint`, mais [aqui](https://github.com/at-import/breakpoint/wiki/Installation#installation).
 - **optipng:** Otimizador de imagens. Para instalar siga as instruções no [site oficial](http://optipng.sourceforge.net/). Lembrando que no Windows o caminho para o executável deve estar no Path.
 
+## Terminologias
+
+### Propriedade
+
+Propriedades são o que definem o estilo do elemento capturado identificado pelo seletor. É um composição de chave-valor.
+
+Ex.:
+```css
+/* seletor */ {
+  background: #f1f1f1;
+  color: #333;
+}
+```
+
+### Seletor
+
+É o que determina a quais elementos da árvore DOM a regra será aplicada. Seletores podem capturar elementos pelo próprio nome do elemento (ex.: div, img, etc), por classe, id ou algum de seus atributos.
+
+Ex.:
+```css
+div {
+  /* propriedades */
+}
+
+.classe {
+  /* propriedades */
+}
+
+#identificador {
+  /* propriedades */
+}
+
+[atributo=valor]  {
+  /* propriedades */
+}
+```
+
+### Regra
+
+É o conjunto das propriedades que serão aplicadas a determinado seletor (ou conjunto de seletores).
+
+Ex.:
+```css
+div, 
+.seletor {
+  background: #f1f1f1;
+  color: #333;
+}
+```
 
 ## Referências
 
