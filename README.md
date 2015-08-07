@@ -104,8 +104,8 @@ Propriedades são o que definem o estilo do elemento capturado identificado pelo
 Ex.:
 ```css
 /* seletor */ {
-  background: #f1f1f1;
-  color: #333;
+    background: #f1f1f1;
+    color: #333;
 }
 ```
 
@@ -116,19 +116,19 @@ Ex.:
 Ex.:
 ```css
 div {
-  /* propriedades */
+    /* propriedades */
 }
 
 .classe {
-  /* propriedades */
+    /* propriedades */
 }
 
 #identificador {
-  /* propriedades */
+    /* propriedades */
 }
 
 [atributo=valor]  {
-  /* propriedades */
+    /* propriedades */
 }
 ```
 
@@ -140,10 +140,94 @@ Ex.:
 ```css
 div, 
 .seletor {
-  background: #f1f1f1;
-  color: #333;
+    background: #f1f1f1;
+    color: #333;
 }
 ```
+
+## Sintaxe e formatação
+
+- Identação de 4 espaços
+- Tentar manter linhas curtas, algo em torno de 80 caracteres no máximo
+- Uso coerente do espaço em branco
+
+```css
+// BOM
+.classe {
+    display: block;
+    height: 100px;
+    margin: 0;    
+}
+
+// RUIM
+.classe{  
+    display: block; height: 100px;
+    
+    margin:0;
+}
+```
+
+### Strings
+
+Strings devem sempre ser envolvidas em aspas simples. Exceto se forem valores específicos de CSS, como `initial` ou `sans-serif`, ou cores (`red`, `white`, etc).
+
+O mesmo se aplica às URLs: `background-image: url('/images/kittens.jpg');`.
+
+Motivos:
+- nomes de cores são tratados como cores quando não possuem aspas, o que pode levar a conflitos
+- a maior parte dos highlighters de sintaxe têm problemas com strings sem aspas
+- ajuda em geral à leitura
+
+### Números
+
+#### Zeros
+
+- Sempre utilizar mostrar o 0 (zero) à esquerda da virgula e nunca mostrar zeros à direita. Ex.: 
+
+```css
+// BOM
+.classe {
+    opacity: 0.5; 
+    font-size: 1.1em; 
+}
+
+// RUIM
+.classe {
+    opacity: .5;
+    font-size: 1.10em; 
+}
+```
+
+- Quando lidar com medidas um valor zero nunca deve utilizar uma unidade. Ex.:
+
+```css
+// BOM
+.classe {
+    font-size: 0; 
+}
+
+// RUIM
+.classe {
+    font-size: 0em;
+}
+```
+
+#### Cálculos
+
+Sempre envolver cálculo com parênteses. Ex.:
+
+```css
+// BOM
+.classe {
+    width: (100% / 3);
+}
+
+// RUIM
+.classe {
+    width: 100% / 3;
+}
+```
+
 
 ## Referências
 
