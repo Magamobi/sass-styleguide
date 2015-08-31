@@ -149,7 +149,8 @@ div,
 
 - Identação de 4 espaços
 - Tentar manter linhas curtas, algo em torno de 80 caracteres no máximo
-- Uso coerente do espaço em branco
+- Na declaração de uma propriedade sempre separar o valor do nome com um espaço
+- Evitar linhas em branco nas regras
 
 ```css
 // BOM
@@ -161,9 +162,9 @@ div,
 
 // RUIM
 .classe{  
-    display: block; height: 100px;
+  display: block; height: 100px;
     
-    margin:0;
+  margin:0;
 }
 ```
 
@@ -182,7 +183,7 @@ Motivos:
 
 #### Zeros
 
-- Sempre utilizar mostrar o 0 (zero) à esquerda da virgula e nunca mostrar zeros à direita. Ex.: 
+Sempre utilizar mostrar o 0 (zero) à esquerda da virgula e nunca mostrar zeros à direita. Ex.: 
 
 ```css
 // BOM
@@ -198,7 +199,7 @@ Motivos:
 }
 ```
 
-- Quando lidar com medidas um valor zero nunca deve utilizar uma unidade. Ex.:
+Quando lidar com medidas um valor zero nunca deve utilizar uma unidade. Ex.:
 
 ```css
 // BOM
@@ -214,7 +215,7 @@ Motivos:
 
 #### Cálculos
 
-Sempre envolver cálculo com parênteses. Ex.:
+Sempre envolver cálculos com parênteses. Ex.:
 
 ```css
 // BOM
@@ -227,6 +228,142 @@ Sempre envolver cálculo com parênteses. Ex.:
     width: 100% / 3;
 }
 ```
+
+### Cores
+
+Utilizar sempre o formato hexadecimal com 6 posições.
+
+Caso seja necessário aplicar opacidade utilizar a função `rgba` do Sass, que aceita cores em formato hexadecimal. Ex.:
+
+```css
+.classe {
+    background-color: rgba(#000000, 0.5);
+}
+```
+
+### Lists
+
+É a estrutura de dados equivalente de arrays. Podem ser armazenados valores de todos os tipos, incluindo outras listas.
+
+- Escrever sempre em várias linhas;
+- Separar por vírgulas;
+- Sempre envolver em parêntesis;
+- Manter vírgula ao final do último item.
+
+```css
+// BOM
+$fontes: (
+  'Arial',
+  'Times New Roman',
+  sans-serif,
+);
+```
+- Utilizar a API disponível quando precisar acrescentar (programaticamente) um novo item à lista. Ex.:
+
+```css
+$fontes: append($fontes, 'Helvetica');
+```
+
+### Maps
+
+É uma estrutura de dados que mapeia chaves (de qualquer tipo) para valores de qualquer tipo.
+
+Ao escrever um map, respeitar:
+
+- Espaço após os dois pontos;
+- Se a chave for uma string envolver com aspas;
+- Chave e valor devem estar na mesma linha;
+- Utilizar vírgula como separador;
+- Manter vírgula ao final do último item.
+
+```css
+// BOM
+$breakpoints: (
+  'small': 320px,
+  'medium': 800px,
+  'large': 1100px,
+);
+```
+
+### Declaração
+
+- Seletores relacionados devem ser escritos na mesma linha;
+- Separar com espaço a chave de abertura do último seletor;
+- Cada propriedade em sua linha;
+- Espaço após os dois pontos;
+- Ponto e vírgula no final da declaração da propriedade;
+- Chave de fechamento em sua própria linha;
+- Separar regras por uma linha em branco.
+
+```css
+// BOM
+.barra, .barra-extendida,
+.linha {
+    opacity: 0.5; 
+    font-size: 1.1em; 
+}
+
+.classe2 {
+    display: inline-block;
+}
+
+// RUIM
+.barra, 
+.barra-extendida, .linha {
+    opacity: 0.5; font-size: 1.1em; }
+.classe2 {
+    display: inline-block;}
+```
+
+Além destas regras de declaração (relacionadas à CSS somente), há algumas muito importantes na escrita de Sass:
+
+- Ordem de escrita da composição da regra deve ser a seguinte:
+  - Variáveis locais;
+  - Propriedades;
+  - Mixins sem `@content`;
+  - Mixins com `@content`;  
+  - Seletores aninhados;
+- Variáveis locais, mixins (com `@content`) e seletores aninhados devem ser separados dos outros elementos por uma linha em branco.
+
+Ex.:
+
+```css
+.barra, .barra-extendida,
+.linha {
+    $font-size: 2em;
+
+    display: block;
+    overflow: hidden;
+    margin: 0 auto;
+
+    @include font-size($font-size);
+
+    @include breakpoint('small') {
+        display: none;
+    }
+
+    &:hover {
+        color: red;
+
+        @include font-size($font-size);
+    }
+}
+```
+
+### Ordenação
+
+Esta é uma das questões mais fervorosamente discutidas quanto a eficácia e sentido. Nós, no entanto, vamos definir de forma muito clara qual o modo desejado.
+
+As propriedades de uma regra devem ser ordenadas por tipo, primeiro os atributos que influenciam o posicionamento e comportamente de posição do elemento, sua exibição, o tamanho e então outras propriedades. Portanto seria esta a ordem: `position, display, tamanho, cores, tipo de letra e outros`.
+
+### Aninhamento de seletores
+
+O aninhamento de seletores é uma feature incrível do Sass mas é extremamente mal interpretada e utilizada. Seu objetivo é facilitar a escrita, mas quanto mais níveis descemos no aninhamento mais difícil será a manutenção deste trecho. 
+
+O desenvolvedor fará o processamento do CSS final mentalmente, com base no aninhamento, antes de decidir onde é o local adequado para inserir uma regra nova, por exemplo. Quanto maior o nível, maior será a complexidade para o desenvolvedor processar mentalmente qual será o CSS gerado. Sem nem citar a dificuldade acrescentada ao utilizar referências ao seletor atual (`&`).
+
+Portanto, uma quantidade aceitável de níveis é `4`. Se você estiver ultrapassando o quarto nível seria interessante repensar a estrutura do seu código.
+
 
 
 ## Referências
