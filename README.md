@@ -253,9 +253,9 @@ Caso seja necessário aplicar opacidade utilizar a função `rgba` do Sass, que 
 ```css
 // BOM
 $fontes: (
-  'Arial',
-  'Times New Roman',
-  sans-serif,
+    'Arial',
+    'Times New Roman',
+    sans-serif,
 );
 ```
 - Utilizar a API disponível quando precisar acrescentar (programaticamente) um novo item à lista. Ex.:
@@ -279,9 +279,9 @@ Ao escrever um map, respeitar:
 ```css
 // BOM
 $breakpoints: (
-  'small': 320px,
-  'medium': 800px,
-  'large': 1100px,
+    'small': 320px,
+    'medium': 800px,
+    'large': 1100px,
 );
 ```
 
