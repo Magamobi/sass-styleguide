@@ -20,25 +20,25 @@ Todas as regras descritas neste foram concebidas e discutidas como melhores prá
   - [Propriedade](#propriedade)
   - [Seletor](#seletor)
   - [Regra](#regra)
-- [Sintaxe e formatação](#)
-  - [Strings](#)
-  - [Números](#)
-  - [Cores](#)
-  - [Lists](#)
-  - [Maps](#)
-  - [Declaração](#)
-  - [Ordenação](#)
-  - [Aninhamento de seletores](#)
-- [Nomeação](#)
-- [Comentários](#)
-- [Responsividade](#)
-  - [Nomeação de breakpoints](#)
-  - [Uso das media queries](#)
-- [Variáveis](#)
-- [Extends](#)
-- [Mixins](#)
-- [Condicionais](#)
-- [Loops](#)
+- [Sintaxe e formatação](#sintaxe-e-formatacao)
+  - [Strings](#strings)
+  - [Números](#numeros)
+  - [Cores](#cores)
+  - [Lists](#lists)
+  - [Maps](#maps)
+  - [Declaração](#declaracao)
+  - [Ordenação](#ordenacao)
+  - [Aninhamento de seletores](#aninhamento-e-seletores)
+- [Nomeação](#nomeacao)
+- [Comentários](#comentarios)
+- [Responsividade](#responsividade)
+  - [Nomeação de breakpoints](#nomeacao-de-breakpoints)
+  - [Uso das media queries](#uso-das-media-queries)
+- [Variáveis](#variaveis)
+<!-- - [Extends](#extends) -->
+<!-- - [Mixins](#mixins) -->
+<!-- - [Condicionais](#condicionais) -->
+<!-- - [Loops](#loops) -->
 
 ## Introdução
 
@@ -65,7 +65,7 @@ O seu propósito é corrigir as falhas do CSS. Que é uma linguagem simples de a
 
 Sass é uma biblioteca (*gem*) Ruby e para instalá-la é necessário possuir o Ruby instalado.
 
-Para Windows é necessário a instalação do [Ruby Installer](http://rubyinstaller.org/). 
+Para Windows é necessário a instalação do [Ruby Installer](http://rubyinstaller.org/).
 
 Após instalado basta abrir o terminal (linha de comando) e digitar `gem install sass`.
 
@@ -102,7 +102,7 @@ Para instalá-lo você deve possuir o Ruby previamente instalado e executar o se
 Propriedades são o que definem o estilo do elemento capturado identificado pelo seletor. É um composição de chave-valor.
 
 Ex.:
-```css
+```sass
 /* seletor */ {
     background: #f1f1f1;
     color: #333;
@@ -114,7 +114,7 @@ Ex.:
 É o que determina a quais elementos da árvore DOM a regra será aplicada. Seletores podem capturar elementos pelo próprio nome do elemento (ex.: div, img, etc), por classe, id ou algum de seus atributos.
 
 Ex.:
-```css
+```sass
 div {
     /* propriedades */
 }
@@ -137,8 +137,8 @@ div {
 É o conjunto das propriedades que serão aplicadas a determinado seletor (ou conjunto de seletores).
 
 Ex.:
-```css
-div, 
+```sass
+div,
 .seletor {
     background: #f1f1f1;
     color: #333;
@@ -152,7 +152,7 @@ div,
 - Na declaração de uma propriedade sempre separar o valor do nome com um espaço
 - Evitar linhas em branco nas regras
 
-```css
+```sass
 // BOM
 .classe {
     display: block;
@@ -163,7 +163,7 @@ div,
 // RUIM
 .classe{  
   display: block; height: 100px;
-    
+
   margin:0;
 }
 ```
@@ -183,28 +183,28 @@ Motivos:
 
 #### Zeros
 
-Sempre utilizar mostrar o 0 (zero) à esquerda da virgula e nunca mostrar zeros à direita. Ex.: 
+Sempre utilizar mostrar o 0 (zero) à esquerda da virgula e nunca mostrar zeros à direita. Ex.:
 
-```css
+```sass
 // BOM
 .classe {
-    opacity: 0.5; 
-    font-size: 1.1em; 
+    opacity: 0.5;
+    font-size: 1.1em;
 }
 
 // RUIM
 .classe {
     opacity: .5;
-    font-size: 1.10em; 
+    font-size: 1.10em;
 }
 ```
 
 Quando lidar com medidas um valor zero nunca deve utilizar uma unidade. Ex.:
 
-```css
+```sass
 // BOM
 .classe {
-    font-size: 0; 
+    font-size: 0;
 }
 
 // RUIM
@@ -217,7 +217,7 @@ Quando lidar com medidas um valor zero nunca deve utilizar uma unidade. Ex.:
 
 Sempre envolver cálculos com parênteses. Ex.:
 
-```css
+```sass
 // BOM
 .classe {
     width: (100% / 3);
@@ -235,7 +235,7 @@ Utilizar sempre o formato hexadecimal com 6 posições.
 
 Caso seja necessário aplicar opacidade utilizar a função `rgba` do Sass, que aceita cores em formato hexadecimal. Ex.:
 
-```css
+```sass
 .classe {
     background-color: rgba(#000000, 0.5);
 }
@@ -250,7 +250,7 @@ Caso seja necessário aplicar opacidade utilizar a função `rgba` do Sass, que 
 - Sempre envolver em parêntesis;
 - Manter vírgula ao final do último item.
 
-```css
+```sass
 // BOM
 $fontes: (
     'Arial',
@@ -260,7 +260,7 @@ $fontes: (
 ```
 - Utilizar a API disponível quando precisar acrescentar (programaticamente) um novo item à lista. Ex.:
 
-```css
+```sass
 $fontes: append($fontes, 'Helvetica');
 ```
 
@@ -276,7 +276,7 @@ Ao escrever um map, respeitar:
 - Utilizar vírgula como separador;
 - Manter vírgula ao final do último item.
 
-```css
+```sass
 // BOM
 $breakpoints: (
     'small': 320px,
@@ -295,12 +295,12 @@ $breakpoints: (
 - Chave de fechamento em sua própria linha;
 - Separar regras por uma linha em branco.
 
-```css
+```sass
 // BOM
 .barra, .barra-extendida,
 .linha {
-    opacity: 0.5; 
-    font-size: 1.1em; 
+    opacity: 0.5;
+    font-size: 1.1em;
 }
 
 .classe2 {
@@ -308,7 +308,7 @@ $breakpoints: (
 }
 
 // RUIM
-.barra, 
+.barra,
 .barra-extendida, .linha {
     opacity: 0.5; font-size: 1.1em; }
 .classe2 {
@@ -327,7 +327,7 @@ Além destas regras de declaração (relacionadas à CSS somente), há algumas m
 
 Ex.:
 
-```css
+```sass
 .barra, .barra-extendida,
 .linha {
     $font-size: 2em;
@@ -358,13 +358,131 @@ As propriedades de uma regra devem ser ordenadas por tipo, primeiro os atributos
 
 ### Aninhamento de seletores
 
-O aninhamento de seletores é uma feature incrível do Sass mas é extremamente mal interpretada e utilizada. Seu objetivo é facilitar a escrita, mas quanto mais níveis descemos no aninhamento mais difícil será a manutenção deste trecho. 
+O aninhamento de seletores é uma feature incrível do Sass mas é extremamente mal interpretada e utilizada. Seu objetivo é facilitar a escrita, mas quanto mais níveis descemos no aninhamento mais difícil será a manutenção deste trecho.
 
 O desenvolvedor fará o processamento do CSS final mentalmente, com base no aninhamento, antes de decidir onde é o local adequado para inserir uma regra nova, por exemplo. Quanto maior o nível, maior será a complexidade para o desenvolvedor processar mentalmente qual será o CSS gerado. Sem nem citar a dificuldade acrescentada ao utilizar referências ao seletor atual (`&`).
 
 Portanto, uma quantidade aceitável de níveis é `4`. Se você estiver ultrapassando o quarto nível seria interessante repensar a estrutura do seu código.
 
+## Nomeação
 
+**Variáveis, Funções e Mixins** devem ser nomeadas obedecendo a seguinte regra: sempre **letras minúsculas** e as **palavras separadas por hífen**.
+
+Ex.:
+```sass
+$background-color: #ff0000;
+
+@mixin aspect-ratio($width, $height) {
+}
+
+@function opposite-direction($direction) {
+}
+```
+
+Infelizmente no Sass não temos como definir uma **constante** propriamente dita, para tanto é interessante adotar um padrão de nomeação que as identifique facilmente e ninguém que vá realizar alguma alteração utilize-a como variável.
+Portanto a nomeação de **constantes** devem seguir a seguinte regra: sempre **letras maiúsculas** e as **palavras separadas por underline**.
+
+Ex.:
+```sass
+$FONT_SIZE_BASE: 1.2em;
+```
+
+## Comentários
+
+Basicamente qualquer coisa que não seja de óbvio entendimento à primeira vista deve ser comentado.
+
+Para comentar uma regra inteira utilizar comentário multilinhas:
+
+```sass
+/**
+ * This mixin keeps the box aspect ratio on every screen resolution, totally responsive.
+ * This needs another box inside it with the class "content" wich, obviously,
+ * will receive all the content that is desired to be displayed
+ */
+@mixin aspect-ratio($width, $height) {
+};
+```
+
+Para comentários sobre um cálculo, uma variável, ou o porquê de uma propriedade em específico deve-se utilizar o comentário *in-line*:
+
+```sass
+//algum comentário relevante sobre o cálculo abaixo
+$padding-top: ($height / $width) * 100%;
+```
+
+## Responsividade
+
+### Nomeação de breakpoints
+
+Os nomes dos breakpoints devem estar relacionados a um grupo de tamanhos de tela ou à uma proporção específica que atingirão, e não específicamente a um tipo de dispositivo ou outro nome qualquer.
+
+Ex.:
+```sass
+// BOM
+$breakpoint-big: min-width 1100px;
+$breakpoint-medium: min-width 800px;
+$breakpoint-small: min-width 520px;
+
+// RUIM
+$breakpoint-desktop: min-width 1100px;
+$breakpoint-tablet: min-width 800px;
+$breakpoint-smartphone: min-width 520px;
+
+// RUIM
+$breakpoint-alpha: min-width 1100px;
+$breakpoint-omega: min-width 800px;
+$breakpoint-beta: min-width 520px;
+```
+
+### Uso das media queries
+
+As *media queries* devem ser escritas sempre dentro do seletor a qual elas pertencem/alteram, pois desta forma fica mais fácil componentizar a aplicação.
+
+Ex.:
+
+```sass
+// BOM
+.foo {
+  color: red;
+
+  @include breakpoint($breakpoint-medium) {
+    color: blue;
+  }
+}
+
+.bar {
+  height: 100px;
+
+  @include breakpoint($breakpoint-medium) {
+    height: 50px
+  }
+}
+
+// RUIM
+.foo {
+  color: red;
+}
+.bar {
+  height: 100px;
+}
+
+@include breakpoint($breakpoint-medium) {
+  .foo {
+    color: blue;
+  }
+  .bar {
+    height: 50px
+  }
+}
+```
+
+### Variáveis
+
+A utilização de variáveis é, sem dúvidas, um dos maiores avanços trazidos pelo Sass, porém seu uso deve ser consciente, variáveis não devem ser utilizadas só porque lhe é permitido.
+Segundo o Sass Guidelines (vide [referências](#referencias)), variáveis devem ser utilizadas quando atendem a uma das seguintes regras:
+- o seu valor é repetido pelo menos duas vezes;
+- o seu valor provavelemnte irá ser atualizado, pelo menos uma vez;
+- todas as ocorrências do seu valor, estão diretamente ligadas à variável (não ser uma coicidência).
 
 ## Referências
 
