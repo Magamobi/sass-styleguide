@@ -20,25 +20,21 @@ Todas as regras descritas neste foram concebidas e discutidas como melhores prá
   - [Propriedade](#propriedade)
   - [Seletor](#seletor)
   - [Regra](#regra)
-- [Sintaxe e formatação](#sintaxe-e-formatacao)
+- [Sintaxe e formatação](#sintaxe-e-formatação)
   - [Strings](#strings)
-  - [Números](#numeros)
+  - [Números](#números)
   - [Cores](#cores)
   - [Lists](#lists)
   - [Maps](#maps)
-  - [Declaração](#declaracao)
-  - [Ordenação](#ordenacao)
+  - [Declaração](#declaração)
+  - [Ordenação](#ordenação)
   - [Aninhamento de seletores](#aninhamento-e-seletores)
-- [Nomeação](#nomeacao)
-- [Comentários](#comentarios)
+- [Nomeação](#nomeação)
+- [Comentários](#comentários)
 - [Responsividade](#responsividade)
-  - [Nomeação de breakpoints](#nomeacao-de-breakpoints)
+  - [Nomeação de breakpoints](#nomeação-de-breakpoints)
   - [Uso das media queries](#uso-das-media-queries)
-- [Variáveis](#variaveis)
-<!-- - [Extends](#extends) -->
-<!-- - [Mixins](#mixins) -->
-<!-- - [Condicionais](#condicionais) -->
-<!-- - [Loops](#loops) -->
+- [Variáveis](#variáveis)
 
 ## Introdução
 
