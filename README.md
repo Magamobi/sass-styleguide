@@ -35,6 +35,7 @@ Todas as regras descritas neste foram concebidas e discutidas como melhores prá
   - [Nomeação de breakpoints](#nomeação-de-breakpoints)
   - [Uso das media queries](#uso-das-media-queries)
 - [Variáveis](#variáveis)
+- [Referências](#referências)
 
 ## Introdução
 
@@ -472,7 +473,7 @@ Ex.:
 }
 ```
 
-### Variáveis
+## Variáveis
 
 A utilização de variáveis é, sem dúvidas, um dos maiores avanços trazidos pelo Sass, porém seu uso deve ser consciente, variáveis não devem ser utilizadas só porque lhe é permitido.
 Segundo o Sass Guidelines (vide [referências](#referencias)), variáveis devem ser utilizadas quando atendem a uma das seguintes regras:
